@@ -12,3 +12,5 @@ Código de un programita en Fastapi para la exposición de la materia de Soporte
 ### Para correr el servidor
 
 `uvicorn main:app --reload`
+
+[Tutorial](https://www.youtube.com/watch?v=lKk_hudmAfE)
