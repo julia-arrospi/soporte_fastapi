@@ -42,7 +42,7 @@ def create_user(data_user: UserSchema):
         
         return Response(status_code=HTTP_201_CREATED)
     
-@user.post("/api/user/login", status_code="HTTP_200_OK")
+@user.post("/api/user/login", status_code=HTTP_200_OK)
 def user_login(data_user: DataUser):
     with engine.connect() as conn:
         result = conn.execute(users.select().where(users.c.username == data_user.username).where()).first()
