@@ -13,4 +13,5 @@ Código de un programita en Fastapi para la exposición de la materia de Soporte
 
 `uvicorn main:app --reload`
 
-[Tutorial](https://www.youtube.com/watch?v=lKk_hudmAfE)
+[Tutorial 1](https://www.youtube.com/watch?v=lKk_hudmAfE)
+[Tutorial 2](https://youtu.be/N5VjIqAsDQ8)
