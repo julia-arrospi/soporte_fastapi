@@ -1,34 +1,16 @@
-# Para ver la documentación autogenerada de Swagger:
-http://127.0.0.1:8000/docs
+# soporte_fastapi
+Código de un programita en Fastapi para la exposición de la materia de Soporte (UTN FRRo)
 
-## Para correr el entorno virtual
+## Comandos para instalar fastapi
 
-.\venv\Scripts\activate
+[Documentación Oficial](https://fastapi.tiangolo.com/)
 
-o 
+`pip install fastapi`
 
-.\venv\Scripts\activate.bat   
+`pip install "uvicorn[standard]"`
 
-# Requerimientos, estan dentro del entorno virtual venv
+### Para correr el servidor
 
-pip install uvicorn
-pip install fastapi
-pip install sqlalchemy
-pip install pymysql
-pip install cryptography
+`uvicorn main:app --reload`
 
-pip freeze > requirements.txt, hace un dump de los requerimientos en un archivo.
-
-# Para correr la app:
-
-uvicorn main:app --reload
-
-# Descripcion de carpetas
-- Config --> Config de la BBDD
-- Schema --> Esquema de usuarios
-- Model --> Esquema de las tablas
-- Router --> Rutas de la aplicacion
-
-
-
-
+[Tutorial](https://www.youtube.com/watch?v=lKk_hudmAfE)
