@@ -6,6 +6,9 @@ from config.db import engine
 from model.users import users
 from werkzeug.security import generate_password_hash, check_password_hash
 from typing import List
+import jwt as _jwt
+
+_JWT_SECRET = "frrosoporte"
 
 user = APIRouter()
 
@@ -46,13 +49,19 @@ def create_user(data_user: UserSchema):
 def user_login(data_user: DataUser):
     with engine.connect() as conn:
         result = conn.execute(users.select().where(users.c.username == data_user.username).where()).first()
-        
+        print(result)
         if result != None:
             check_password = check_password_hash(result[3], data_user.user_password)
             if check_password:
+                datos = {
+                    "nombre": result[2],
+                    "username": result[3],
+                }
+                token = _jwt.encode(datos, _JWT_SECRET)
                 return {
                     "status": 200,
-                    "mensaje": "Logueado correctamente"
+                    "mensaje": "Logueado correctamente",
+                    "token": token,
                 }
             else:
                 return {
