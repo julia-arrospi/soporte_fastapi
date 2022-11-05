@@ -49,7 +49,7 @@ def create_user(data_user: UserSchema):
 def user_login(data_user: DataUser):
     with engine.connect() as conn:
         result = conn.execute(users.select().where(users.c.username == data_user.username).where()).first()
-        print(result)
+
         if result != None:
             check_password = check_password_hash(result[3], data_user.user_password)
             if check_password:
