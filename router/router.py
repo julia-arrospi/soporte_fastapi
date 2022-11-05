@@ -54,8 +54,8 @@ def user_login(data_user: DataUser):
             check_password = check_password_hash(result[3], data_user.user_password)
             if check_password:
                 datos = {
-                    "nombre": result[2],
-                    "username": result[3],
+                    "nombre": result[1],
+                    "username": result[2],
                 }
                 token = _jwt.encode(datos, _JWT_SECRET)
                 return {
